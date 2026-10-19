@@ -1,0 +1,81 @@
+{
+  "study": "Gastric histology nuclei instance segmentation with HoVer-Net",
+  "tissues": {
+    "STNT": "Gastritis",
+    "STIN": "Intestinal-type adenocarcinoma",
+    "STDI": "Diffuse-type adenocarcinoma",
+    "STMX": "Mixed-type adenocarcinoma"
+  },
+  "conditions": [
+    "base",
+    "add",
+    "replace50",
+    "replace100",
+    "real300"
+  ],
+  "manifest_root": "data/manifests",
+  "pretrained": "pretrained/ImageNet-ResNet50-Preact_pytorch.tar",
+  "primary_metric": "Mean per-image PQ on the common real-only test set",
+  "model_mode": "fast",
+  "nuclear_type_classification": false,
+  "training_seeds": [
+    42
+  ],
+  "batch_size": 2,
+  "max_optimizer_updates": 60000,
+  "lr_schedule": {
+    "kind": "plateau_once",
+    "initial_lr": 0.0001,
+    "reduced_lr": 1e-05,
+    "patience_checks": 3
+  },
+  "validation_interval_updates": 1200,
+  "encoder_freeze_schedule": {
+    "freeze_updates": 0
+  },
+  "policy": {
+    "budget": "optimizer_updates",
+    "early_stopping": true,
+    "checkpoint_selection": "validation_image_mean_pq",
+    "checkpoint_ties": "earliest_update",
+    "primary_checkpoint": "best_pq.pth",
+    "primary_metric": "image_mean_pq",
+    "np_threshold": 0.5,
+    "np_comparison": ">=",
+    "match_iou": 0.5,
+    "matching_comparison": ">",
+    "empty_both": "all_scores_zero",
+    "hv_channels": [
+      "X",
+      "Y"
+    ],
+    "loss_weights": {
+      "np_ce": 1.0,
+      "np_dice": 1.0,
+      "hv_mse": 1.0,
+      "hv_msge": 1.0
+    },
+    "patches_per_image": 4,
+    "model_mode": "fast",
+    "drop_last": true,
+    "frozen_encoder_bn": "eval",
+    "test_used_in_design": true
+  },
+  "checkpoint_selection": "validation_image_mean_pq",
+  "bootstrap": {
+    "repetitions": null,
+    "seed": null,
+    "confidence": 0.95,
+    "method": "paired_patient_cluster_percentile_image_weighted",
+    "multiplicity": "exploratory_pointwise_intervals_no_significance_claims"
+  },
+  "main_execution": {
+    "num_workers": 4,
+    "inference_batch_size": 1
+  },
+  "early_stopping": {
+    "min_delta": 0.001,
+    "patience_checks": 5,
+    "start_after_updates": 6000
+  }
+}

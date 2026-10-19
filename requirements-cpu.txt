@@ -1,0 +1,10 @@
+# Direct dependencies observed in the Windows Python 3.12.10 CPU checks.
+# First install: python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+numpy==2.2.6
+pandas==2.3.3
+torch==2.8.0+cpu
+Pillow==12.1.0
+opencv-python==4.12.0.88
+scipy==1.15.3
+scikit-image==0.25.2
+matplotlib==3.10.8

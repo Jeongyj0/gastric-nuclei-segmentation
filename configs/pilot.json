@@ -1,0 +1,31 @@
+{
+  "purpose": "train_validation_budget_selection",
+  "pilot_id": "probe01",
+  "study_config": "configs/study.json",
+  "tissues": [
+    "STNT",
+    "STIN",
+    "STDI",
+    "STMX"
+  ],
+  "conditions": [
+    "base"
+  ],
+  "training_seeds": [
+    42
+  ],
+  "batch_size": 1,
+  "max_optimizer_updates": 3000,
+  "lr_schedule": {
+    "kind": "step",
+    "initial_lr": 0.0001,
+    "step_size_updates": 1500,
+    "gamma": 0.1
+  },
+  "validation_interval_updates": 500,
+  "encoder_freeze_schedule": {
+    "freeze_updates": 0
+  },
+  "num_workers": 4,
+  "inference_batch_size": 1
+}
