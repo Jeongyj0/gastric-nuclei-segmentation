@@ -35,6 +35,4 @@ This weight license does not license AIHub source data, annotations, third-party
 materials, or any rights that Yang Jun Jeong does not hold. Obtain external data
 under the data provider's own access conditions and terms.
 
-The code is located at https://github.com/Jeongyj0/gastric-nuclei-segmentation.
-The repository is private; access to these weights does not grant repository
-access. No code files or source images are included in `checkpoints.zip`.
+The code is publicly available at https://github.com/Jeongyj0/gastric-nuclei-segmentation. No code files or source images are included in `checkpoints.zip`.

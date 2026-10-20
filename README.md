@@ -2,7 +2,7 @@
 
 HoVer-Net NP/HV instance segmentation for four gastric tissue groups: STNT, STIN, STDI, and STMX.
 
-Version: `v1.0.0`. The [code repository](https://github.com/Jeongyj0/gastric-nuclei-segmentation) is private. Original research code is licensed under MIT; the pretrained weights are separately licensed under CC BY 4.0. See [Licenses](#licenses) for scope and third-party notices.
+Version: `v1.0.0`. The [code repository](https://github.com/Jeongyj0/gastric-nuclei-segmentation) is publicly available. Original research code is licensed under MIT; the pretrained weights are separately licensed under CC BY 4.0. See [Licenses](#licenses) for scope and third-party notices.
 
 | Path | Contents |
 |---|---|
@@ -54,7 +54,7 @@ Training samples four reflected 540 x 540 contexts from each image, augments/cro
 
 ## Separate model weights and manifest
 
-The pretrained weights are published on [Zenodo, version v1.0.0](https://zenodo.org/records/23465622), DOI [10.5281/zenodo.23465622](https://doi.org/10.5281/zenodo.23465622), under CC BY 4.0. The record contains the weight archive, its manifest, and the weight license notice. The code is maintained separately in the private GitHub repository; the Zenodo deposit does not include the code or grant repository access.
+The pretrained weights are published on [Zenodo, version v1.0.0](https://zenodo.org/records/23465622), DOI [10.5281/zenodo.23465622](https://doi.org/10.5281/zenodo.23465622), under CC BY 4.0. The record contains the weight archive, its manifest, and the weight license notice. The code is publicly available in the GitHub repository; the Zenodo deposit contains the pretrained weights and accompanying documentation, but not the source code.
 
 Download these three files from the record:
 
